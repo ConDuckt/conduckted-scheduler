@@ -1,33 +1,43 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-
 // the code isn't run until the browser has finished rendering all the elements
-
 // in the html.
 
-// Add a listener for click events on the save button. 
+// Display the current date in the header of the page.
 
-// Use the id in the containing time-block as a key to save the user input in local storage. 
+// Add click lister events on the saveBtn. 
+var saveBtn = $(".saveBtn");
+saveBtn.click
+$(saveBtn).click(function() {
+// Get time-block id's. Use DOM traversal to get correct "hour-x" id is for each saveBtn.
+// `this` targets saveBtn in the function so it won't work outside the function:
+    var timeBlock = $(this).first(".time-block").attr("id");
+    var userInput = $(this).first(".description").val();
+// Set any userInput to localStorage 
+//  Use the id in the containing time-block as a key to save the user input in local storage. 
+    localStorage.setItem(timeBlock, userInput);
+});
 
-// HINT: What does `this` reference in the click listener
+// ref error:
+localStorage.getItem(timeBlock, userInput);
 
-// DOM traversal can be used to get the "hour-x" id 
-// of the time-block containing the button that was clicked
+// Get time-block id's. 
 
-// The id is useful when saving the description in local storage
+// Use DOM traversal to get correct "hour-x" id is for each saveBtn.
+// `this` targets saveBtn in the function so you need to traverse to c 
 
-// Add code to apply the past, present, or future class to each time block 
-// by comparing the id to the current hour.
 
-// The id attribute of each time-block be used to conditionally add or remove 
-// the past, present, and future classes.
+// Set any userInput to localStorage 
+//  Use the id in the containing time-block as a key to save the user input in local storage. 
 
-// Day.js can be used to get the current hour in 24-hour time.
+// Get current time with day.js.
+
+// Apply the past, present, or future class to each time block by comparing the time-block id to the current time.
+  // The id attribute of each time-block be used to conditionally add or remove 
+  // the past, present, and future classes.
 
 // Add code to get any user input that was saved in localStorage 
 // and set the values of the corresponding textarea elements. 
-//  The id attribute of each time-block be used to do this.
-
-// Add code to display the current date in the header of the page.
+// The id attribute of each time-block be used to do this.
 
 // WHEN I open the planner
 // THEN the current day is displayed at the top of the calendar
