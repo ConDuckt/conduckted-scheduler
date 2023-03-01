@@ -19,7 +19,7 @@ $(".time-block").each(function () {
     } else if (timeBlock === currentTimeCheck) {
         $(this).addClass("present");
     } else if (timeBlock < currentTimeCheck) {
-      $(this).addClass("past");
+        $(this).addClass("past");
     }
 });
 
@@ -27,5 +27,6 @@ $(saveBtn).click(function() {
     var timeBlock = $(this).closest(".time-block").attr("id");
     var userInput = $(this).siblings(".description").val();
 
-    localStorage.setItem(timeBlock, userInput);
+localStorage.setItem(timeBlock, userInput);
+
 });
